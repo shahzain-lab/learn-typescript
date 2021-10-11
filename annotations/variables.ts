@@ -1,5 +1,5 @@
 
-// annotations: Code we add to tell typescript what type of value a variable will
+// variable annotations: Code we add to tell typescript what type of value a variable will
 // refer to. We can specify the type using :Type after the name of the variable, parameter or property.
 
 // VARIABLE_ANNOTATIONS
@@ -40,4 +40,27 @@ const car: Car = new Car();
 const user: {first: string, age: number} = {
     first: 'shahzain',
     age: 16
+}
+
+// FUNCTION
+const foo:(age: number) => void = (age: number) => {
+    console.log(age);
+}
+
+
+// ___when to use type annotatios___
+// 1) Function that returns 'any' type.
+const json = '{"x": 3, "y": 5}';
+const coordinate = JSON.parse(json); // annotations : { x: number; y: number }
+console.log(coordinate);
+ 
+
+// 2) when we declare a varable on one line and initialize it later.
+const names: string[] = ['jane', 'miller', 'mike', 'smith']
+let isMiller; // annotation: boolean
+
+for(let i = 0; i < names.length; i++){
+    if(names[i] === 'miller'){
+        isMiller = true;
+    }
 }
