@@ -1,1 +1,9 @@
-console.log(new Date().toString());
+import {} from 'googlemaps';
+import CustomMap from './CustomMap';
+import User from './User';
+import Company from './Company';
+
+const user = new User();
+const company = new Company()
+const customMap = new CustomMap('googlemaps');
+customMap.addUserMarker(user)
