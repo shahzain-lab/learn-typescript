@@ -6,4 +6,5 @@ import Company from './Company';
 const user = new User();
 const company = new Company()
 const customMap = new CustomMap('googlemaps');
-customMap.addUserMarker(user)
+customMap.addMarker(user);
+customMap.addMarker(company);

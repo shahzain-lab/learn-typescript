@@ -1,8 +1,14 @@
-import Company from "./Company";
-import User from "./User";
+export interface MapClass{
+    location: {
+        lat: number,
+        lng: number
+    },
+    markerContent(): string;
+    color: string
+}
 
 class CustomMap{
-    googleMap: google.maps.Map;
+    private googleMap: google.maps.Map;
     constructor(mapDiv: string){
         this.googleMap = new google.maps.Map(document.getElementById(mapDiv),{
             center: {
@@ -13,17 +19,24 @@ class CustomMap{
         })
     }
 
-    addUserMarker(user: User): void {
-        new google.maps.Marker({
+    addMarker(mapClass: MapClass): void {
+        const marker = new google.maps.Marker({
             map: this.googleMap,
             position: {
-                lat: user.location.lat,
-                lng: user.location.lng
+                lat: mapClass.location.lat,
+                lng: mapClass.location.lng
             }
+        });
+
+        marker.addListener('click', () => {
+        const infoWindow = new google.maps.InfoWindow({
+            content: mapClass.markerContent()
+        });
+
+        infoWindow.open(this.googleMap, marker);
         })
     }
 
-    addCompanyMarker(company: Company): void {}
 }
 
 export default CustomMap;
