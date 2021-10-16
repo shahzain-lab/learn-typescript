@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import Persons from './components/Persons';
+import UserData from './components/UserData';
+import { GlobalProvider } from './context/GlobalState';
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <Persons name="Zain">
-        <h3>Learning Typescript</h3>
-      </Persons>
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        <UserData />
+        <Persons />
+      </div>
+    </GlobalProvider>
   );
 }
 

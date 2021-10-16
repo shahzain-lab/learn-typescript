@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { ReactNode, useContext } from 'react';
+import { GlobalData } from '../context/GlobalState';
 
-type Props = {
-    name: string,
-    children: JSX.Element
-}
 
-const Persons = ({ name, children }: Props): JSX.Element => {
+const Persons = () => {
+    // const persons = useContext(GlobalData);
+
     return (
-        <div>
-            <h1>HEllo {name}</h1>
-            <h3>{children}</h3>
-        </div>
+        <>
+            {
+                // persons.map(ele => (
+                //     <ul key={ele.id}>
+                //         <li>{ele.name}</li>
+                //         <li>{ele.age}</li>
+                //     </ul>
+                // ))
+            }
+        </>
     )
 }
 
