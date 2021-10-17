@@ -17,9 +17,10 @@ interface AppContext {
 }
 
 
-export const GlobalData = createContext({});
+export const GlobalData = createContext<AppContext>({} as AppContext);
 
 export const GlobalProvider = ({ children }: Props) => {
+
     const [persons, setPersons] = useState<Person[]>([]);
 
     return (

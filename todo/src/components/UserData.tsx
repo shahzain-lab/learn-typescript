@@ -1,20 +1,21 @@
 import React, { useContext, useState } from 'react'
-import { GlobalData } from '../context/GlobalState';
+import { GlobalData, Person } from '../context/GlobalState';
 
 function UserData() {
-    const [name, setName] = useState<string>();
-    const [age, setAge] = useState<number>();
+    const [name, setName] = useState<string>('');
+    const [age, setAge] = useState<number>(0);
     const { persons, setPersons } = useContext(GlobalData)
 
     const submitHandler = (e: React.FormEvent): void => {
         e.preventDefault();
 
-        const addPerson = {
+        const addPerson: Person = {
             id: new Date().getTime(),
             name,
             age
         }
-        setPersons()
+
+        setPersons([...persons, addPerson])
     }
 
     return (
