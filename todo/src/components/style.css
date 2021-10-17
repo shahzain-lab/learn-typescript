@@ -1,0 +1,36 @@
+ul {
+  list-style: none;
+  padding: 0%;
+}
+
+ul li {
+  background: #05c8c8;
+  padding: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  outline: none;
+  padding: 2px;
+  font-size: 1.3rem;
+  color: #4b4b4b;
+}
+
+label {
+  text-transform: uppercase;
+  padding: 2px 0;
+  font-size: 1.3rem;
+}
+
+button {
+  margin: 1rem;
+  cursor: pointer;
+}

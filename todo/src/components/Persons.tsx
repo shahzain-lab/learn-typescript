@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalData } from '../context/GlobalState';
+import './style.css'
 
 
 const Persons = () => {
@@ -10,8 +11,7 @@ const Persons = () => {
             {
                 persons.map(ele => (
                     <ul key={ele.id}>
-                        <li>{ele.name}</li>
-                        <li>{ele.age}</li>
+                        <li>{ele.name}<b>{ele.age}</b></li>
                     </ul>
                 ))
             }

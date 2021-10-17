@@ -14,8 +14,9 @@ function UserData() {
             name,
             age
         }
-
-        setPersons([...persons, addPerson])
+        if (name && age) {
+            setPersons([...persons, addPerson])
+        }
     }
 
     return (
