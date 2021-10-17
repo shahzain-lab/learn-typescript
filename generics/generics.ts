@@ -30,17 +30,26 @@ const insOfNumber = new getAll([34, 53, 52, 73, 23]);
 
 // more on generics
 
-interface Printable{
-    print(ind: number): void
+
+const cars = <T, Y> (arg: T[], total: Y) => {
+    return `Total cars ${total}: ${arg.toString()}`;
 }
 
-class IterableNumber<T>{
-    constructor(public collection: T[]) {};
+const allCars = cars(["Ford", "BMW", "Toyota"], 3);
 
-    printNums(): void{
-        for(let i = 0; i < this.collection.length; i++){
-        }
+interface Fullname{
+    first: string;
+    last: string
+}
+
+const logIn = <T extends Fullname> (obj: T) => {
+    return {
+        ...obj,
+        fullName: obj.first + ' ' + obj.last
     }
 }
 
-const iteration = new IterableNumber([23, 45, 75, 23, 32])
+const john = logIn({first: 'john', last: 'alia'});
+
+
+

@@ -16,3 +16,9 @@ const table: [string, number, boolean] = ["white", 20, true ];
 type Drink = [string, number, boolean];
 
 const coca: Drink = ['brown', 40, false];
+
+// in arrays
+
+let iam: [string, number, boolean ];
+
+iam = ['zain', 23, false]
